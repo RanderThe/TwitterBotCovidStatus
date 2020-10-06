@@ -57,7 +57,7 @@ Twitter.stream('statuses/filter', {track: '#CovidNaMinhaCidade'}, function(strea
     });
   });
 
-  // ... when we get an error...
+  // ... when we get an error, log it...
   stream.on('error', function(error) {
     //print out the error
     console.log(error);
