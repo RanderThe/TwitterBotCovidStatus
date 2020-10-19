@@ -9,12 +9,8 @@ const file = fs.createReadStream(csvFilePath);
 var csvData = [];
 Papa.parse(file, {
   header: true,
-  step: function (result) {
-    csvData.push(result.data)
-  },
-  complete: function (results, file) {
-    console.log('Complete', csvData.length, 'records.');
-  }
+  step: (result) => csvData.push(result.data),
+  complete: (results, file) => console.log('Complete', csvData.length, 'records.')
 });
 
 
@@ -34,10 +30,10 @@ var secret = {
 var Twitter = new TwitterPackage(secret);
 
 // Call the stream function and pass in 'statuses/filter', our filter object, and our callback
-Twitter.stream('statuses/filter', { track: '#CovidNaMinhaCidade' }, function (stream) {
+Twitter.stream('statuses/filter', { track: '#CovidNaMinhaCidade' }, (stream) => {
 
   // ... when we get tweet data...
-  stream.on('data', function (tweet) {
+  stream.on('data', (tweet) => {
 
     // print out the text of the tweet that came in
     console.log(tweet.text);
@@ -47,7 +43,7 @@ Twitter.stream('statuses/filter', { track: '#CovidNaMinhaCidade' }, function (st
     var statusObj = { status: "Oi @" + tweet.user.screen_name + ", o total de casos confirmados em " + city + " é de: " + totalCases, in_reply_to_status_id: tweet.id_str }
 
     //call the post function to tweet something
-    Twitter.post('statuses/update', statusObj, function (error, tweetReply, response) {
+    Twitter.post('statuses/update', statusObj, (error, tweetReply, response) => {
 
       //if we get an error print it out
       if (error) {
@@ -60,7 +56,7 @@ Twitter.stream('statuses/filter', { track: '#CovidNaMinhaCidade' }, function (st
   });
 
   // ... when we get an error, log it...
-  stream.on('error', function (error) {
+  stream.on('error', (error) => {
     //print out the error
     console.log(error);
   });
