@@ -1,8 +1,8 @@
 {
-  "name": "twitterbots",
+  "name": "twitter-bot-covid-status",
   "version": "1.0.0",
-  "description": "TwitterBotCalaBocaEVtnc",
-  "main": "index.js",
+  "description": "Retorna a quantidade de casos de COVID da cidade informada. https://twitter.com/BOTCovidStatus",
+  "main": "bot.js",
   "scripts": {
     "build": "tsc"
   },
