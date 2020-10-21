@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  covid-bot:
+    build: .
+    volumes:
+      - ./.env:/app/.env
