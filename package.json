@@ -1,5 +1,6 @@
 {
   "name": "twitter-bot-covid-status",
+  "repository": "https://github.com/RanderThe/TwitterBotCovidStatus",
   "version": "1.0.0",
   "description": "Retorna a quantidade de casos de COVID da cidade informada. https://twitter.com/BOTCovidStatus",
   "main": "bot.js",
@@ -10,15 +11,9 @@
   "author": "RanderThe",
   "license": "ISC",
   "dependencies": {
-    "@angular/common": "^6.0.0",
-    "@angular/core": "^6.0.0",
-    "angular": "^1.8.0",
     "axios": "^0.21.4",
     "dotenv": "^8.2.0",
-    "fs": "0.0.1-security",
-    "ngx-papaparse": "^5.0.0",
-    "papaparse": "^5.2.0",
-    "twit": "^2.2.11",
+    "papaparse": "^5.3.1",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
