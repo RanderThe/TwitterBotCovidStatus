@@ -11,8 +11,10 @@
   "author": "RanderThe",
   "license": "ISC",
   "dependencies": {
+    "ajv": "^8.11.0",
     "axios": "^0.21.4",
     "dotenv": "^8.2.0",
+    "follow-redirects": "^1.15.1",
     "papaparse": "^5.3.1",
     "twitter": "^1.7.1"
   },
